@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>PT POLONGAN LIMPADO</title>
+</head>
+<body>
+    <header class="header-contener">
+    <div class="logo-icon"></div>
+    <div class="nav-contener">
+        <button>HOME</button>
+        <button>OUR PAGE</button>
+        <button>CALL US</button>
+    </div>
+    </header>
+    <hr />
+
+    <main class="section-container">
+        <header>
+            <h1>SELAMAT DATANG DI PT POLONGAN LIMPADO</h1>
+            <h3>Anda Sopan Kami pun Segan</h3>
+        </header>
+
+        <div class="section-conten-container">
+            <div style="height: 200px; width: 100%; background-color:antiquewhite; margin-right: 16px;">
+                <div>
+                <img class="img-slideshow" src="assest/gambar/cabe.jpeg" alt=""
+                />
+                <img class="img-slideshow" src="assest/gambar/garam dapur.jpg" alt=""
+                />
+                <img class="img-slideshow" src="assest/gambar/qtela.jpeg" alt=""
+                />
+                <button onclick="plusDivs(-1)">Previous</button>
+                <button onclick="plusDivs(1)">Next</button>
+            </div>
+            <script>
+                var slideIndex =1;
+                showDivs(slideIndex);
+
+                function plusDivs(n) {
+                    showDivs((slideIndex +=n));
+                }
+
+                function showDivs(n){
+                    var i;
+                    var imgList= document.getElementsByClassName("img-slideshow");
+                    if(n> imgList.length) slideIndex= 1;
+                    else if (n< 1) slideIndex = imgList.length;
+
+                    for (i=0; i<imgList.length; i++){
+                    imgList[i].style.display = "none";
+                    }
+                    imgList[slideIndex-1].style.display = "block";
+                }
+                    setInterval(()=>{
+
+                    }, 1000)
+                
+            </script>
+            </div>
+            <div style="height: 200px; width: 100%; background-color:aliceblue ; ">
+            <form action="" name="message-form" onsubmit="return validateForm()">
+                <label for="">Your Name</label> <br>
+                <input class="name-input" type="text" name="nama" id="nama"  placeholder="Masukan Nama Lengkap"><br>
+                <label for="">Email</label> <br>
+                <input class="name-input" type="email" name="" id=""  placeholder="Masukan Email Anda"><br>
+
+            <label for="hoby">What are you Interested in ?:</label>
+<br>
+            <select class="name-input" name="hoby" id="hoby">
+                <option value="Choose">--Choose One--</option>
+              <option value="Chess">Chess</option>
+              <option value="Swiming">Swiming</option>
+              <option value="Badminton">Badminton</option>
+              <option value="Traveling">Traveling</option>
+            </select>  <br>
+            <button class="btn-button" type="submit"  id="submit">Send</button>
+            <p id="error-name"></p>
+        </form>
+        <h1>Selamat <span id="name">-</span>, berkunjung di website kami</h1>
+            </div>
+        </div>
+    </main>
+
+
+
+    <footer>
+<p><i>ini tahun 2024</i></p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
